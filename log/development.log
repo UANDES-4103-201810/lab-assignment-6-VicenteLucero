@@ -3685,3 +3685,59 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-17 15:10:50 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 135ms (Views: 129.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-04-17 15:11:06 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5gllrT+CS3blFPDRaloM/66iUijc1OQrh1MTYNlqQ30IOSgExeDsdi+WfkpTkBUgeU8+ebqgX2+Swq/ng/i0rA==", "session"=>{"email"=>"vicholuce@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vicholuce@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 5.2ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x007f64941eff28>):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-17 15:13:49 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 224ms (Views: 215.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-04-17 15:13:56 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RBI1h4JKRBetU0gCRdS74rN9QsCJwDAlH8qh8kG/O0+qIngueCjjF2fRxpl8HqI9ZJAuke+0i2EKWx11Gy3Mng==", "session"=>{"email"=>"vicholuce@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/sessions_controller.rb:6:in `[]'
+app/controllers/sessions_controller.rb:6:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-17 15:23:52 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 205ms (Views: 198.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-04-17 15:24:05 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4oyftkR/VHco1DS0rwvMQhNlaPbrW8jqubM0b0u3EyEMvNIfvh3zd+JWui+WwdWdxIgEp40vc66sIojoESXk8A==", "session"=>{"email"=>"vicholuce@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<Class:0x007fa024075280>):
+  
+app/controllers/sessions_controller.rb:6:in `create'

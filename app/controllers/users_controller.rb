@@ -25,13 +25,17 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    #complete this method
+
+      User.create(params[:user])
+
   end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    #complete this method
+    user = current_session.user.find(params[:id])
+    user.update!(user_params)
+    redirect_to user
   end
 
   # DELETE /users/1

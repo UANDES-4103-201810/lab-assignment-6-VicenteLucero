@@ -9,7 +9,7 @@ class RegistrationsController < ApplicationController
 				redirect_to log_in_path
 
 			else
-				flash.now[:danger] = 'Invalid combination'
+				flash.now[:danger] = "Invalid combination"
 				redirect_to registrations_path
 			end
 
