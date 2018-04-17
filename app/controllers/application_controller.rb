@@ -6,7 +6,13 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-	#complete this method
+    user = User.find_by(email: params[:sessions][:email].downcase)
+    if user && user.authenticate(params[:sessions][:password])
+      redirect_to users_path
+    else
+      flash.now[:danger] = 'Invalid combination of email/password'
+      render 'new'
+    end
   end
 
   def is_user_logged_in?
