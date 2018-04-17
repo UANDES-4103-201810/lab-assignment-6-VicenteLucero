@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def update
     user = current_session.user.find(params[:id])
     user.update!(user_params)
-    redirect_to user
+    redirect_to users_path
   end
 
   # DELETE /users/1
