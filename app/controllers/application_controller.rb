@@ -1,18 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  include SessionsHelper
 
   def index
 
   end
 
   def current_user
-    user = User.find_by(email: params[:sessions][:email].downcase)
-    if user && user.authenticate(params[:sessions][:password])
-      redirect_to users_path
-    else
-      flash.now[:danger] = 'Invalid combination of email/password'
-      render 'new'
-    end
+    User.find_by(id: session[:user_id])
   end
 
   def is_user_logged_in?
